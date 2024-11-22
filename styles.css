@@ -61,6 +61,31 @@ body {
     margin-bottom: 15px;
 }
 
+.custom-dropdown {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: var(--light); /* Matches other form elements */
+    color: var(--primary); /* Matches text color */
+    font-size: 16px;
+    appearance: none; /* Removes default dropdown styling */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.custom-dropdown:focus {
+    outline: none;
+    border-color: var(--primary); /* Highlight color on focus */
+    box-shadow: 0 0 5px rgba(44, 62, 80, 0.5); /* Subtle glow effect */
+}
+
+.custom-dropdown option {
+    background-color: white; /* Dropdown background */
+    color: var(--primary); /* Matches text color */
+}
+
+
 input, select {
     width: 95%;
     padding: 10px;
