@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myPersonal Finance Manager</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="register-sw.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+  </head>
+  <body>
+    <div class="container">
+      <h1><span class="highlight">myPersonal</span> Finance Manager</h1>
+
+      <div class="dashboard">
+        <div class="card balance">
+          <h3>Total Balance</h3>
+          <h2 id="total-balance">$0.00</h2>
+        </div>
+        <div class="card income">
+          <h3>Total Income</h3>
+          <h2 id="total-income">$0.00</h2>
+        </div>
+        <div class="card expense">
+          <h3>Total Expenses</h3>
+          <h2 id="total-expenses">$0.00</h2>
+        </div>
+      </div>
+
+      <div class="transaction-form">
+        <h3>Add New Transaction</h3>
+        <form id="transaction-form">
+          <div class="form-group">
+            <label for="description">Description</label><br />
+            <input type="text" id="description" required />
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount</label><br />
+            <input type="number" id="amount" required step="0.01" />
+          </div>
+          <div class="form-group">
+            <label for="type">Type</label><br />
+            <select id="type" required>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+          <button type="submit">Add Transaction</button>
+        </form>
+      </div>
+
+      <h3>Transaction History</h3>
+      <div class="transactions" id="transaction-list"></div>
+
+      <button id="export-data">Export Data</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
