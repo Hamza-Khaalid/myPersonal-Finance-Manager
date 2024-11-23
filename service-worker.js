@@ -8,6 +8,7 @@ const urlsToCache = [
   "./manifest.json",
   "./icon-192-new.png",
   "./icon-512-new.png",
+  "./logo.png"
 ];
 
 // Install Event: Cache necessary files
