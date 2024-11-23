@@ -1,4 +1,4 @@
-const CACHE_NAME = 'finance-manager-cache-v2'; // Increment this version for every update
+const CACHE_NAME = 'finance-manager-cache-v3'; // Increment version when updating files
 const urlsToCache = [
     './',
     './index.html',
@@ -18,9 +18,12 @@ self.addEventListener('install', (event) => {
             return cache.addAll(urlsToCache);
         })
     );
+
+    // Force this new service worker to skip waiting
+    self.skipWaiting();
 });
 
-// Activate Event: Clear old caches
+// Activate Event: Clear old caches and take control
 self.addEventListener('activate', (event) => {
     const cacheWhitelist = [CACHE_NAME];
     event.waitUntil(
@@ -35,6 +38,9 @@ self.addEventListener('activate', (event) => {
             );
         })
     );
+
+    // Claim clients immediately
+    self.clients.claim();
 });
 
 // Fetch Event: Network first, fallback to cache
@@ -42,7 +48,6 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
         fetch(event.request)
             .then((response) => {
-                // Clone and store the response in the cache
                 const responseToCache = response.clone();
                 caches.open(CACHE_NAME).then((cache) => {
                     cache.put(event.request, responseToCache);
