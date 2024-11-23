@@ -86,6 +86,88 @@ body {
 }
 
 
+/* App Header Styling */
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo on the left, title text takes the remaining space */
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+/* Logo Styling */
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Circular logo */
+    object-fit: cover; /* Ensures the logo scales properly */
+}
+
+/* Title Styling */
+.title {
+    flex-grow: 1; /* Allows the title section to take up the remaining horizontal space */
+    text-align: center; /* Centers the title text */
+}
+
+.title h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 24px;
+    margin: 0;
+}
+
+.title .highlight {
+    color: #e74c3c; /* Highlighted text color */
+}
+
+.tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: var(--secondary);
+    margin: 5px 0 0; /* Adds some spacing from the title */
+}
+
+/* Hero Section Styling */
+.hero {
+    margin: 30px;
+    margin-top: 10px;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    color: var(--primary); /* Changed text color to match the primary theme */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Ensures any additional content is centered */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .hero{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .app-header {
+        flex-direction: row; /* Ensure the logo and text stay side by side */
+        align-items: center; /* Vertically align logo and text */
+        text-align: left; /* Left-align the text for better readability */
+        gap: 10px; /* Reduce spacing between logo and text */
+    }
+
+    .logo {
+        width: 40px; /* Slightly smaller logo for smaller screens */
+        height: 40px;
+    }
+
+    .title h1 {
+        font-size: 20px; /* Reduce font size for smaller screens */
+    }
+
+    .tagline {
+        font-size: 12px; /* Adjust tagline size for better fit */
+    }
+}
+
 input, select {
     width: 95%;
     padding: 10px;
