@@ -1,4 +1,4 @@
-const CACHE_NAME = 'finance-manager-cache-v3'; // Increment version when updating files
+const CACHE_NAME = 'finance-manager-cache-v4'; // Increment version when updating files
 const urlsToCache = [
     './',
     './index.html',
